@@ -25,6 +25,37 @@ const RESUME = {
     "I am a self-taught JS developer specializing in building web apps and in web optimization. I enjoy creating complex scalable apps working with modern JS, as well as building vanilla JS apps, extensions, add-ons. I am looking to join a team of passionate people to grow together along the way.",
   employment: [
     {
+      position: "Front End Web Developer (NextJS)",
+      company: "Freelance Project (EdTech)",
+      location: "remote",
+      startDate: "01.05.2023",
+      endDate: "01.06.2024",
+      responsibilities: [
+        "UI redesign and feature migration from platform v1 to v2",
+        "working on new features (form/state heavy features, realtime messaging) and bugfixes, as well as maintaining storybook, unit tests, e2e tests",
+        "working on refactoring of logic heavy parts of application",
+        // "maintaining storybook, unit tests, e2e tests",
+        // "participating in feature refinement and estimation processes",
+      ],
+    },
+    {
+      position: "Front End Developer (React/React Native)",
+      company: "Freelance Project (Fintech)",
+      location: "remote",
+      startDate: "01.10.2021",
+      endDate: "01.02.2022",
+      responsibilities: [
+        // "setup web app structure",
+        "building visually attractive (and reusable) components, interactions, animations for the best look and feel of the app",
+        // "building complex animations for the home page",
+        // "working with customizable graphs and data representation components",
+        "maintaining codebase and app performance",
+        "created a unified approach to handle different 3rd party libraries for web3 authentication using hooks",
+        "built minimal image editor for creating NFTs/Ads based on AI-generated images",
+        // "kept improving app usability: better handling of existing case scenarios within provided design guides",
+      ],
+    },
+    {
       position: "Technical Consultant",
       company: "LeanConvert",
       location: "remote",

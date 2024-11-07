@@ -26,6 +26,7 @@ const Summary: React.FC<EducationProps> = ({
   className,
   ...props
 }) => {
+  const duration = getDuration(startDate, endDate);
   return (
     <div className={clsx(styles.root, className)} {...props}>
       <div className={styles.title}>
@@ -39,7 +40,9 @@ const Summary: React.FC<EducationProps> = ({
         <span className={styles.date}>
           {endDate ? datePretty(endDate) : "ongoing"}
         </span>
-        {`, (${getDuration(startDate, endDate)} years)`}
+        {duration >= 1
+          ? ` (${duration} year${duration === 1 ? "" : "s"})`
+          : "< year"}
       </div>
       <div className={styles.location}>{location.trim()}</div>
     </div>

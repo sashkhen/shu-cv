@@ -1,0 +1,71 @@
+.root {
+  display: grid;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  grid-template-columns: auto 1fr;
+  grid-template-areas:
+    "head head"
+    "left right";
+
+  @media only screen and (max-width: 1024px) {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "head"
+      "right"
+      "left";
+  }
+}
+
+.head {
+  grid-area: head;
+  padding: 2rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, .1);
+
+  @media (prefers-color-scheme: light) {
+    border-color: rgba(0, 0, 0, .1);
+  }
+}
+
+.left {
+  grid-area: left;
+  max-width: 30vw;
+  padding: 1rem;
+  border-right: 1px solid rgba(255, 255, 255, .1);
+
+  @media (prefers-color-scheme: light) {
+    border-color: rgba(0, 0, 0, .1);
+  }
+}
+
+.right {
+  grid-area: right;
+  padding: 1rem;
+}
+
+.right>*:not(:first-child) {
+  border-top: 1px solid rgba(255, 255, 255, .1);
+
+  @media (prefers-color-scheme: light) {
+    border-color: rgba(0, 0, 0, .1);
+  }
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0;
+}
+
+.listUnstyled {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.listUnstyled>li {
+  margin-bottom: 1.5rem;
+}

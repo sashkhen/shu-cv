@@ -1,0 +1,40 @@
+.root {
+  display: grid;
+  grid-gap: 0.25rem;
+  margin: 0 0 0.5rem;
+  grid-template-columns: 1fr auto;
+  grid-template-areas:
+    'title location'
+    'duration location';
+}
+
+.title {
+  grid-area: title;
+  font-size: 1rem;
+}
+
+.location {
+  grid-area: location;
+  font-size: 0.875rem;
+  line-height: 1rem;
+  color: rgba(255, 255, 255, .5);
+
+  @media (prefers-color-scheme: light) {
+    color: rgba(0, 0, 0, .5);
+  }
+}
+
+.duration {
+  grid-area: duration;
+  font-size: 0.75rem;
+  line-height: 1;
+}
+
+.position {
+  font-weight: 700;
+}
+
+.company {
+  font-weight: 600;
+  font-style: italic;
+}

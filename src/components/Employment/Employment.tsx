@@ -38,7 +38,10 @@ const Employment: React.FC<EmploymentProps> = ({
         startDate={startDate}
         endDate={endDate}
       />
-      <List items={responsibilities?.map((item) => ({ content: item }))} />
+      <List
+        className="text--smaller"
+        items={responsibilities?.map((item) => ({ content: item }))}
+      />
     </div>
   );
 };

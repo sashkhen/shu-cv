@@ -3,7 +3,7 @@
   width: 100%;
   min-height: 100vh;
   overflow: hidden;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: 18rem 1fr;
   grid-template-areas:
     "head head"
     "left right";
@@ -19,7 +19,7 @@
 
 .head {
   grid-area: head;
-  padding: 2rem 1rem;
+  padding: 1rem;
   border-bottom: 1px solid rgba(255, 255, 255, .1);
 
   @media (prefers-color-scheme: light) {
@@ -29,13 +29,14 @@
 
 .left {
   grid-area: left;
-  max-width: 30vw;
   padding: 1rem;
   border-right: 1px solid rgba(255, 255, 255, .1);
 
   @media (prefers-color-scheme: light) {
     border-color: rgba(0, 0, 0, .1);
   }
+
+  container-type: inline-size;
 }
 
 .right {

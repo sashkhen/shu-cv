@@ -1,5 +1,25 @@
 .root {}
 
-.title {}
+.title {
+  position: relative;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.title::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: block;
+  width: 3.5rem;
+  height: 0.125rem;
+  background-color: #ffffff;
+
+  @media (prefers-color-scheme: light) {
+    background-color: #000000;
+  }
+}
+
 
 .content {}

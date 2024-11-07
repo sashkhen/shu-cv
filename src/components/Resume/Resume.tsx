@@ -28,7 +28,7 @@ const Resume: React.FC<ResumeProps> = ({ className, ...props }) => {
           <List>
             <ListItem icon="📍">{`based in: ${data.contact.address}`}</ListItem>
             <ListItem icon="✉️">
-              email me at:{" "}
+              {/* email:{" "} */}
               <a href={`mailto:${data.contact.email}`} target="_blank">
                 {data.contact.email}
               </a>
@@ -66,10 +66,32 @@ const Resume: React.FC<ResumeProps> = ({ className, ...props }) => {
             }))}
           />
         </Section>
+        <Section title="Education">
+          <ul className={styles.listUnstyled}>
+            {data.education.map((item, i) => (
+              <li key={i}>
+                <Education
+                  specialization={item.specialization}
+                  degree={item.degree}
+                  school={item.school}
+                  startDate={item.startDate}
+                  endDate={item.endDate}
+                  location={item.location}
+                />
+              </li>
+            ))}
+          </ul>
+        </Section>
+        {/* <Section>
+          <p dangerouslySetInnerHTML={{ __html: data.footnote }} />
+        </Section> */}
       </div>
       <div className={styles.right}>
-        <Section title="Profile">
+        {/* <Section title="Profile">
           <p>{data.description}</p>
+        </Section> */}
+        <Section title="Profile">
+          <p dangerouslySetInnerHTML={{ __html: data.footnote }} />
         </Section>
         <Section title="Employment history">
           <ul className={styles.listUnstyled}>
@@ -87,7 +109,7 @@ const Resume: React.FC<ResumeProps> = ({ className, ...props }) => {
             ))}
           </ul>
         </Section>
-        <Section title="Education">
+        {/* <Section title="Education">
           <ul className={styles.listUnstyled}>
             {data.education.map((item, i) => (
               <li key={i}>
@@ -102,10 +124,10 @@ const Resume: React.FC<ResumeProps> = ({ className, ...props }) => {
               </li>
             ))}
           </ul>
-        </Section>
-        <Section>
+        </Section> */}
+        {/* <Section>
           <p dangerouslySetInnerHTML={{ __html: data.footnote }} />
-        </Section>
+        </Section> */}
       </div>
     </div>
   );

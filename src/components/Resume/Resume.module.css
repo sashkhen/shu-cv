@@ -68,6 +68,10 @@
     max-height: calc(100% - 1rem * 2);
     border: 1rem solid #fff;
   }
+
+  @media only screen and (max-width: 1024px) {
+    display: none;
+  }
 }
 
 .left {

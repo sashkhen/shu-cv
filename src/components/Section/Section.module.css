@@ -13,18 +13,12 @@
   display: block;
   width: 3.5rem;
   height: 0.25rem;
-  background-color: #ffffff;
-}
-
-@media (prefers-color-scheme: light) {
-  .title::before {
-    background-color: #000000;
-  }
+  background-color: rgba(var(--primary-color), 1);
 }
 
 @media print {
   .title {
-    border-bottom: 1px solid #000000;
+    border-bottom: 1px solid rgb(var(--primary-color));
   }
 
   .title::before {

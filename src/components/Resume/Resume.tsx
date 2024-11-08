@@ -28,10 +28,9 @@ const Resume: React.FC<ResumeProps> = ({ className, ...props }) => {
         </div>
       </div>
       <div className={styles.left}>
-        <Section title="Contact">
+        <Section title="Contact" className={styles.contact}>
           <List>
             <ListItem icon="✉️">
-              {/* email:{" "} */}
               <a href={`mailto:${data.contact.email}`} target="_blank">
                 {data.contact.email}
               </a>
@@ -46,7 +45,6 @@ const Resume: React.FC<ResumeProps> = ({ className, ...props }) => {
               </a>
             </ListItem>
             <ListItem icon="💼">
-              {" "}
               linkedin:{" "}
               <a href={data.contact.linkedin} target="_blank">
                 {data.name}
@@ -55,14 +53,14 @@ const Resume: React.FC<ResumeProps> = ({ className, ...props }) => {
             <ListItem icon="📍">{`based in: ${data.contact.address}`}</ListItem>
           </List>
         </Section>
-        <Section title="Skills">
-          <ul className={styles.skills}>
+        <Section title="Core tech stack" className={styles.skills}>
+          <ul className={styles.skillsList}>
             {data.skills.map((skill) => (
               <Pill key={skill}>{skill.trim()}</Pill>
             ))}
           </ul>
         </Section>
-        <Section title="Languages">
+        <Section title="Languages" className={styles.languages}>
           <List
             items={data.languages.map((item) => ({
               ...item,
@@ -70,7 +68,7 @@ const Resume: React.FC<ResumeProps> = ({ className, ...props }) => {
             }))}
           />
         </Section>
-        <Section title="Education">
+        <Section title="Education" className={styles.education}>
           <ul className={styles.listUnstyled}>
             {data.education.map((item, i) => (
               <li key={i}>
@@ -86,18 +84,12 @@ const Resume: React.FC<ResumeProps> = ({ className, ...props }) => {
             ))}
           </ul>
         </Section>
-        {/* <Section>
-          <p dangerouslySetInnerHTML={{ __html: data.footnote }} />
-        </Section> */}
       </div>
       <div className={styles.right}>
-        {/* <Section title="Profile">
-          <p>{data.description}</p>
-        </Section> */}
-        <Section title="Profile">
+        <Section title="Profile" className={styles.profile}>
           <p dangerouslySetInnerHTML={{ __html: data.footnote }} />
         </Section>
-        <Section title="Employment history">
+        <Section title="Employment history" className={styles.employment}>
           <ul className={styles.listUnstyled}>
             {data.employment.map((item, i) => (
               <li key={i}>
@@ -114,25 +106,6 @@ const Resume: React.FC<ResumeProps> = ({ className, ...props }) => {
             ))}
           </ul>
         </Section>
-        {/* <Section title="Education">
-          <ul className={styles.listUnstyled}>
-            {data.education.map((item, i) => (
-              <li key={i}>
-                <Education
-                  specialization={item.specialization}
-                  degree={item.degree}
-                  school={item.school}
-                  startDate={item.startDate}
-                  endDate={item.endDate}
-                  location={item.location}
-                />
-              </li>
-            ))}
-          </ul>
-        </Section> */}
-        {/* <Section>
-          <p dangerouslySetInnerHTML={{ __html: data.footnote }} />
-        </Section> */}
       </div>
     </div>
   );

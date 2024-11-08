@@ -2,21 +2,15 @@
   list-style-type: none;
   margin: 0;
   padding: 0.5rem 1rem;
-  background-color: rgba(255, 255, 255, .1);
+  background-color: rgba(var(--primary-color), .1);
   border-radius: 1rem;
   font-weight: 600;
   font-size: 0.75rem;
   line-height: 1;
 }
 
-@media (prefers-color-scheme: light) {
-  .root {
-    background-color: rgba(0, 0, 0, .1);
-  }
-}
-
 @media print {
   .root {
-    border: 1px solid rgba(0, 0, 0, .1);
+    border: 1px solid rgba(var(--primary-color), .1);
   }
 }

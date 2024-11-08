@@ -3,9 +3,10 @@ import React from "react";
 import QRCode from "react-qr-code";
 
 import data from "../../constants/data.json";
+import { Contacts } from "../Contacts";
 import { Education } from "../Education";
 import { Employment } from "../Employment";
-import { List, ListItem } from "../List";
+import { List } from "../List";
 import { Pill } from "../Pill";
 import { Section } from "../Section";
 import styles from "./Resume.module.css";
@@ -29,29 +30,7 @@ const Resume: React.FC<ResumeProps> = ({ className, ...props }) => {
       </div>
       <div className={styles.left}>
         <Section title="Contact" className={styles.contact}>
-          <List>
-            <ListItem icon="✉️">
-              <a href={`mailto:${data.contact.email}`} target="_blank">
-                {data.contact.email}
-              </a>
-            </ListItem>
-            <ListItem icon="👩‍💻">
-              github:{" "}
-              <a
-                href={`https://github.com/${data.contact.github}/`}
-                target="_blank"
-              >
-                {data.contact.github}
-              </a>
-            </ListItem>
-            <ListItem icon="💼">
-              linkedin:{" "}
-              <a href={data.contact.linkedin} target="_blank">
-                {data.name}
-              </a>
-            </ListItem>
-            <ListItem icon="📍">{`based in: ${data.contact.address}`}</ListItem>
-          </List>
+          <Contacts name={data.name} {...data.contact} />
         </Section>
         <Section title="Core tech stack" className={styles.skills}>
           <ul className={styles.skillsList}>

@@ -8,9 +8,7 @@ export default defineConfig({
   plugins: [react()],
   css: {
     modules: {
-      generateScopedName: (name: string, filename: string) => {
-        return `${filename.split("/").reverse()[0].split(".")[0]}__${name}`;
-      },
+      generateScopedName: "[folder]__[local]__[hash:base64:5]",
     },
   },
   build: {

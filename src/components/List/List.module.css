@@ -1,8 +1,10 @@
 .root {
-  padding-left: 1rem
+  list-style-type: none;
+  padding: 0;
 }
 
 .item {
-  list-style-type: '•';
-  padding: 0.125rem 0 0.125rem 0.5rem;
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.125rem 0;
 }

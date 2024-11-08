@@ -8,28 +8,6 @@ type BaseItemProps = Omit<
   "data-testid" | "ref"
 >;
 
-export type ItemProps = BaseItemProps & {
-  icon?: string;
-};
-
-export const Item: React.FC<ItemProps> = ({ icon, children, ...props }) => {
-  return (
-    <li
-      className={styles.item}
-      style={
-        icon
-          ? {
-              listStyleType: `"${icon}"`,
-            }
-          : undefined
-      }
-      {...props}
-    >
-      {children}
-    </li>
-  );
-};
-
 type BaseListProps = Omit<
   React.DetailedHTMLProps<
     React.HTMLAttributes<HTMLUListElement>,
@@ -38,8 +16,25 @@ type BaseListProps = Omit<
   "data-testid" | "ref"
 >;
 
+export type ItemProps = BaseItemProps & {
+  icon?: string;
+};
+
 export type ListProps = BaseListProps & {
   items?: ItemProps[];
+};
+
+export const Item: React.FC<ItemProps> = ({
+  icon = "👉",
+  children,
+  ...props
+}) => {
+  return (
+    <li className={styles.item} {...props}>
+      {icon ? <span>{icon}</span> : null}
+      <span>{children}</span>
+    </li>
+  );
 };
 
 export const List: React.FC<ListProps> = ({

@@ -2,7 +2,6 @@ import clsx from "clsx";
 import React from "react";
 
 import data from "../../constants/data.json";
-import { List } from "../List";
 import { Pill } from "../Pill";
 import { Summary } from "../Summary";
 import styles from "./Employment.module.css";
@@ -42,10 +41,15 @@ const Employment: React.FC<EmploymentProps> = ({
         startDate={startDate}
         endDate={endDate}
       />
-      <List
-        className={styles.responsibilities}
-        items={responsibilities?.map((item) => ({ content: item }))}
-      />
+      {responsibilities?.length ? (
+        <ul className={styles.list}>
+          {responsibilities.map((item) => (
+            <li key={item} className={styles.listItem}>
+              {item}
+            </li>
+          ))}
+        </ul>
+      ) : null}
       {techStack ? (
         <ul className={styles.pills}>
           {techStack.map((item) => (

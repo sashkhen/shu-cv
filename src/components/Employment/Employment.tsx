@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import React from "react";
 
-import data from "../../constants/resume";
+import data from "../../constants/data.json";
 import { List } from "../List";
 import { Pill } from "../Pill";
 import { Summary } from "../Summary";

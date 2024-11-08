@@ -2,7 +2,7 @@ import clsx from "clsx";
 import React from "react";
 import QRCode from "react-qr-code";
 
-import data from "../../constants/resume";
+import data from "../../constants/data.json";
 import { Education } from "../Education";
 import { Employment } from "../Employment";
 import { List, ListItem } from "../List";

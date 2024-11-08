@@ -20,7 +20,7 @@ npm run dev
 
 ### Updating
 
-If you'd like to update CV with you own info, go to [resume.ts](./src/constants/resume.ts) file and make necessary adjustments.
+If you'd like to update CV with you own info, go to [data.json](./src/constants/data.json) file and make necessary adjustments.
 
 In order to adjust print version sizing go to [global styles](./src/index.css) file and adjust base `font-size` value for `print` media query:
 

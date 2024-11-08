@@ -36,6 +36,11 @@ In order to adjust print version sizing go to [global styles](./src/index.css) f
 }
 ```
 
+In order to update document title and favicon:
+
+- go to [public folder](./public/) and replace `logo.png` with your logo file
+- go to [index.html](./index.html), update title, update favicon `href` and `type` attributes
+
 ### Building
 
 In order to build app for production use
@@ -53,9 +58,7 @@ In order to deploy your own version of CV to github pages:
 
 ```json
 {
-  ...
   "homepage": "https://<username>.github.io/<repository>",
-  ...
 }
 ```
 

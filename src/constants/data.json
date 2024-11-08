@@ -21,7 +21,6 @@
     { "name": "English", "icon": "🇬🇧" },
     { "name": "Ukrainian", "icon": "🇺🇦" }
   ],
-  "description": "I am a self-taught JS developer specializing in building web apps and in web optimization. I enjoy creating complex scalable apps working with modern JS, as well as building vanilla JS apps, extensions, add-ons. I am looking to join a team of passionate people to grow together along the way.",
   "employment": [
     {
       "position": "Front-End Web Developer (NextJS)",

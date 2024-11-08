@@ -32,14 +32,42 @@
   @media only screen and (max-width: 1024px) {
     border: none;
   }
+
+  @media print {
+    border: none;
+  }
+
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas: 'title qrCode'
+  'subtitle qrCode';
 }
 
 .head h1 {
+  grid-area: title;
   margin-bottom: 0.5rem;
 }
 
 .head h2 {
+  grid-area: subtitle;
   margin-top: 0.5rem;
+}
+
+.qrCode {
+  grid-area: qrCode;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  position: relative;
+
+  >* {
+    position: absolute;
+    top: 50%;
+    right: -1rem;
+    transform: translate(0, -50%);
+    max-width: calc(100% - 1rem * 2);
+    max-height: calc(100% - 1rem * 2);
+    border: 1rem solid #fff;
+  }
 }
 
 .left {
@@ -57,6 +85,10 @@
     border: none;
   }
 
+  @media print {
+    border: none;
+  }
+
   container-type: inline-size;
 }
 
@@ -69,18 +101,6 @@
     flex-direction: column;
   }
 }
-
-/* .right>*:not(:first-child) {
-  border-top: 1px solid rgba(255, 255, 255, .1);
-
-  @media (prefers-color-scheme: light) {
-    border-color: rgba(0, 0, 0, .1);
-  }
-
-  @media only screen and (max-width: 1024px) {
-    border: none;
-  }
-} */
 
 .skills {
   display: flex;

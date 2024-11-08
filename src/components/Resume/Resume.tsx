@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import React from "react";
+import QRCode from "react-qr-code";
 
 import data from "../../constants/resume";
 import { Education } from "../Education";
@@ -22,6 +23,9 @@ const Resume: React.FC<ResumeProps> = ({ className, ...props }) => {
       <div className={styles.head}>
         <h1>{data.name}</h1>
         <h2>{data.position}</h2>
+        <div className={styles.qrCode}>
+          <QRCode value={window.location.href} />
+        </div>
       </div>
       <div className={styles.left}>
         <Section title="Contact">

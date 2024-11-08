@@ -8,10 +8,10 @@ const RESUME = {
     github: "sashkhen",
   },
   skills: [
-    "JS/TS (ES6/ES5)",
     "React",
     "NextJS",
     "Redux",
+    "Typescript",
     "Node",
     "HTML/CSS",
     "CSS in JS",

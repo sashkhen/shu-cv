@@ -13,4 +13,8 @@
   @media (prefers-color-scheme: light) {
     background-color: rgba(0, 0, 0, .1);
   }
+
+  @media print {
+    border: 1px solid #000000;
+  }
 }

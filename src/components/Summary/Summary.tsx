@@ -1,8 +1,8 @@
 import clsx from "clsx";
+import moment from "moment";
 import React from "react";
 
 import styles from "./Summary.module.css";
-import { datePretty, getDuration } from "./utils";
 
 type BaseProps = Omit<
   React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>,
@@ -15,7 +15,11 @@ export type EducationProps = BaseProps & {
   location: string;
   startDate: string;
   endDate?: string;
+  displayDuration?: boolean;
 };
+
+const beautify = (date: string) => moment(date).format("MMM YYYY");
+const getDiff = (a: string, b?: string) => moment(b).from(moment(a), true);
 
 const Summary: React.FC<EducationProps> = ({
   position,
@@ -23,10 +27,10 @@ const Summary: React.FC<EducationProps> = ({
   location,
   startDate,
   endDate,
+  displayDuration = true,
   className,
   ...props
 }) => {
-  const duration = getDuration(startDate, endDate);
   return (
     <div className={clsx(styles.root, className)} {...props}>
       <div className={styles.title}>
@@ -35,14 +39,12 @@ const Summary: React.FC<EducationProps> = ({
         <span className={styles.company}>{company.trim()}</span>
       </div>
       <div className={styles.duration}>
-        <span className={styles.date}>{datePretty(startDate)}</span>
+        <span className={styles.date}>{beautify(startDate)}</span>
         {" — "}
         <span className={styles.date}>
-          {endDate ? datePretty(endDate) : "ongoing"}
+          {endDate ? beautify(endDate) : "ongoing"}
         </span>
-        {duration >= 1
-          ? ` (${duration} year${duration === 1 ? "" : "s"})`
-          : "< year"}
+        {displayDuration ? ` (${getDiff(startDate, endDate)})` : null}
       </div>
       <div className={styles.location}>{location.trim()}</div>
     </div>

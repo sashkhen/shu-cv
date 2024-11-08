@@ -1,7 +1,9 @@
 import clsx from "clsx";
 import React from "react";
 
+import data from "../../constants/resume";
 import { List } from "../List";
+import { Pill } from "../Pill";
 import { Summary } from "../Summary";
 import styles from "./Employment.module.css";
 
@@ -17,15 +19,17 @@ export type EmploymentProps = BaseProps & {
   startDate: string;
   endDate?: string;
   responsibilities?: string[];
+  techStack?: string[];
 };
 
 const Employment: React.FC<EmploymentProps> = ({
-  position = "Front-end Web Developer",
+  position = data.position,
   company,
   location,
   startDate,
   endDate,
   responsibilities,
+  techStack = [],
   className,
   ...props
 }) => {
@@ -39,9 +43,16 @@ const Employment: React.FC<EmploymentProps> = ({
         endDate={endDate}
       />
       <List
-        className="text--smaller"
+        className={styles.responsibilities}
         items={responsibilities?.map((item) => ({ content: item }))}
       />
+      {techStack ? (
+        <ul className={styles.pills}>
+          {techStack.map((item) => (
+            <Pill key={item}>{item.trim()}</Pill>
+          ))}
+        </ul>
+      ) : null}
     </div>
   );
 };

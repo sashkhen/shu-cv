@@ -1,7 +1,6 @@
-.root {}
-
 .title {
   position: relative;
+  margin: 1.25rem 0;
   text-transform: uppercase;
   font-weight: 400;
 }
@@ -13,13 +12,10 @@
   left: 0;
   display: block;
   width: 3.5rem;
-  height: 0.125rem;
+  height: 0.25rem;
   background-color: #ffffff;
 
   @media (prefers-color-scheme: light) {
     background-color: #000000;
   }
 }
-
-
-.content {}

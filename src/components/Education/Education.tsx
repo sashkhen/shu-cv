@@ -38,6 +38,7 @@ const Education: React.FC<EducationProps> = ({
         location={location}
         startDate={startDate}
         endDate={endDate}
+        displayDuration={false}
       />
       {description ? (
         <div className={styles.content}>

@@ -26,18 +26,10 @@ const Resume: React.FC<ResumeProps> = ({ className, ...props }) => {
       <div className={styles.left}>
         <Section title="Contact">
           <List>
-            <ListItem icon="📍">{`based in: ${data.contact.address}`}</ListItem>
             <ListItem icon="✉️">
               {/* email:{" "} */}
               <a href={`mailto:${data.contact.email}`} target="_blank">
                 {data.contact.email}
-              </a>
-            </ListItem>
-            <ListItem icon="💼">
-              {" "}
-              linkedin:{" "}
-              <a href={data.contact.linkedin} target="_blank">
-                {data.name}
               </a>
             </ListItem>
             <ListItem icon="👩‍💻">
@@ -49,6 +41,14 @@ const Resume: React.FC<ResumeProps> = ({ className, ...props }) => {
                 {data.contact.github}
               </a>
             </ListItem>
+            <ListItem icon="💼">
+              {" "}
+              linkedin:{" "}
+              <a href={data.contact.linkedin} target="_blank">
+                {data.name}
+              </a>
+            </ListItem>
+            <ListItem icon="📍">{`based in: ${data.contact.address}`}</ListItem>
           </List>
         </Section>
         <Section title="Skills">
@@ -104,6 +104,7 @@ const Resume: React.FC<ResumeProps> = ({ className, ...props }) => {
                   startDate={item.startDate}
                   endDate={item.endDate}
                   responsibilities={item.responsibilities}
+                  techStack={item.techStack}
                 />
               </li>
             ))}

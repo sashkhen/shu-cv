@@ -64,6 +64,7 @@
   .root {
     display: flex;
     flex-direction: column;
+    container-type: inline-size;
   }
 
   .left,
@@ -75,6 +76,10 @@
   .left>*,
   .right>* {
     padding: 0 1rem;
+  }
+
+  .left {
+    container-type: initial;
   }
 
   .head {

@@ -55,52 +55,61 @@
 
 .qrCode {
   grid-area: qrCode;
+  position: relative;
   height: 100%;
   aspect-ratio: 1 / 1;
-  position: relative;
+}
 
-  >* {
-    position: absolute;
-    top: 50%;
-    right: -1rem;
-    transform: translate(0, -50%);
-    max-width: calc(100% - 1rem * 2);
-    max-height: calc(100% - 1rem * 2);
-    border: 1rem solid #fff;
-  }
-
-  @media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1024px) {
+  .qrCode {
     display: none;
   }
+}
+
+.qrCode>* {
+  position: absolute;
+  top: 50%;
+  right: -1rem;
+  transform: translate(0, -50%);
+  max-width: calc(100% - 1rem * 2);
+  max-height: calc(100% - 1rem * 2);
+  border: 1rem solid #fff;
 }
 
 .left {
   grid-area: left;
   padding: 0 1rem;
   border-right: 1px solid rgba(255, 255, 255, .1);
+  container-type: inline-size;
+}
 
-  @media (prefers-color-scheme: light) {
-    border-color: rgba(0, 0, 0, .1);
-  }
-
-  @media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1024px) {
+  .left {
     display: flex;
     flex-direction: column-reverse;
     border: none;
   }
+}
 
-  @media print {
+@media (prefers-color-scheme: light) {
+  .left {
+    border-color: rgba(0, 0, 0, .1);
+  }
+}
+
+@media print {
+  .left {
     border: none;
   }
-
-  container-type: inline-size;
 }
 
 .right {
   grid-area: right;
   padding: 0 1rem;
+}
 
-  @media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1024px) {
+  .right {
     display: flex;
     flex-direction: column;
   }

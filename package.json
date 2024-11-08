@@ -4,6 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "homepage": "https://sashkhen.github.io/shu-cv",
+  "description": "Personal CV project",
+  "author": "sashkhen056@gmail.com",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",

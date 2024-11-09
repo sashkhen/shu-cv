@@ -9,6 +9,7 @@ import { Employment } from "../Employment";
 import { List } from "../List";
 import { Pill } from "../Pill";
 import { Section } from "../Section";
+import { Square } from "../Square";
 import styles from "./Resume.module.css";
 
 type BaseProps = Omit<
@@ -22,11 +23,13 @@ const Resume: React.FC<ResumeProps> = ({ className, ...props }) => {
   return (
     <div className={clsx(styles.root, className)} {...props}>
       <div className={styles.head}>
-        <h1>{data.name}</h1>
-        <h2>{data.position}</h2>
-        <div className={styles.qrCode}>
-          <QRCode value={window.location.href} />
+        <div>
+          <h1>{data.name}</h1>
+          <h2>{data.position}</h2>
         </div>
+        <Square basedOnParent="height" className={clsx(styles.qrArea)}>
+          <QRCode value={window.location.href} />
+        </Square>
       </div>
       <div className={styles.left}>
         <Section title="Contact" className={styles.contact}>

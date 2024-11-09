@@ -38,8 +38,8 @@ In order to adjust print version sizing go to [global styles](./src/index.css) f
 
 In order to update document title and favicon:
 
-- go to [public folder](./public/) and replace `logo.png` with your logo file
-- go to [index.html](./index.html), update title, update favicon `href` and `type` attributes
+- go to [public folder](./public/) and replace existing logo files with your own
+- go to [index.html](./index.html), update title, update favicon(s) `href` and `type` attributes
 
 ### Building
 

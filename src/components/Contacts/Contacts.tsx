@@ -14,6 +14,7 @@ type BaseProps = Omit<
 
 export type ContactsProps = BaseProps & {
   name: string;
+  website?: string;
   email?: string;
   address?: string;
   github?: string;
@@ -22,6 +23,7 @@ export type ContactsProps = BaseProps & {
 
 const Contacts: React.FC<ContactsProps> = ({
   name,
+  website,
   email,
   address,
   github,
@@ -31,10 +33,10 @@ const Contacts: React.FC<ContactsProps> = ({
 }) => {
   return (
     <List className={clsx(styles.root, className)} {...props}>
-      {email ? (
-        <ListItem icon="✉️">
-          <a href={`mailto:${email}`} target="_blank">
-            {email}
+      {website ? (
+        <ListItem icon="💻">
+          <a href={website} target="_blank">
+            {new URL(website).hostname}
           </a>
         </ListItem>
       ) : null}
@@ -51,6 +53,13 @@ const Contacts: React.FC<ContactsProps> = ({
           linkedin:{" "}
           <a href={linkedin} target="_blank">
             {name}
+          </a>
+        </ListItem>
+      ) : null}
+      {email ? (
+        <ListItem icon="✉️">
+          <a href={`mailto:${email}`} target="_blank">
+            {email}
           </a>
         </ListItem>
       ) : null}
